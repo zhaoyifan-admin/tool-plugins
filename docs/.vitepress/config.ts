@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: `Vue Amazing UI`,
-  description: 'Amazing UI 组件库',
-  base: '/vue-amazing-ui/',
+  title: `Tool Plugins`,
+  description: 'Tool Plugins 组件库',
+  base: '/tool-plugins/',
 
   head: [ // 网站图标
     ['link', { rel: 'icon', type: 'image/svg+xml', href: 'https://cn.vitejs.dev/viteconf.svg' }]
@@ -17,18 +17,18 @@ export default defineConfig({
     logo: '/amazing-icon.svg',
 
     editLink: {
-      pattern: 'https://github.com/themusecatcher/vue-amazing-ui/tree/master/docs/:path',
+      pattern: 'https://github.com/zhaoyifan-admin/tool-plugins/tree/master/docs/:path',
       text: 'Suggest changes to this page'
     },
     // 默认支持icon包括：'discord'|'facebook'|'github'|'instagram'|'linkedin'|'mastodon'|'slack'|'twitter'|'youtube'
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/themusecatcher/vue-amazing-ui' }
+      { icon: 'github', link: 'https://github.com/zhaoyifan-admin/tool-plugins/tool-plugins' }
       // 自定义icon
       // {
       //   icon: {
       //     svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dribbble</title><path d="M12...6.38z"/></svg>'
       //   },
-      //   link: 'https://www.npmjs.com/package/vue-amazing-ui'
+      //   link: 'https://www.npmjs.com/package/tool-plugins'
       // }
     ],
 
@@ -39,7 +39,7 @@ export default defineConfig({
     algolia: { // algolia 搜索服务 与 内置 search 可二选一
       appId: 'SHDNEYGA8Z',
       apiKey: '91419401b0b0efd31b610e54e5b97249',
-      indexName: 'vue-amazing-ui'
+      indexName: 'tool-plugins'
     },
 
     footer: {

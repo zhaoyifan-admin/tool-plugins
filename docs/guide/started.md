@@ -1,26 +1,26 @@
 # 快速上手
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Tool Plugins" />
 
 ## Install
 
 ::: code-group
 
 ```sh [npm]
-$ npm install vue-amazing-ui
+$ npm install tool-plugins
 ```
 
 ```sh [pnpm]
-$ pnpm add vue-amazing-ui
+$ pnpm add tool-plugins
 ```
 
 ```sh [yarn]
-$ yarn add vue-amazing-ui
+$ yarn add tool-plugins
 ```
 
 ```sh [bun]
-$ bun add vue-amazing-ui
+$ bun add tool-plugins
 ```
 
 :::
@@ -33,8 +33,8 @@ $ bun add vue-amazing-ui
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueAmazingUI from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import VueAmazingUI from 'tool-plugins'
+import 'tool-plugins/css'
 
 const app = createApp(App)
 app.use(VueAmazingUI)
@@ -46,8 +46,8 @@ app.mount('#app')
 
 ```vue
 <script setup lang="ts">
-import { Button } from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import { Button } from 'tool-plugins'
+import 'tool-plugins/css'
 </script>
 
 <template>
@@ -72,6 +72,6 @@ import {
   formatNumber,
   toggleDark,
   useEventListener
-} from 'vue-amazing-ui'
+} from 'tool-plugins'
 </script>
 ```

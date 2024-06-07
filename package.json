@@ -8,16 +8,16 @@
     "package.json",
     "README.md"
   ],
-  "main": "./dist/vue-amazing-ui.umd.cjs",
-  "module": "./dist/vue-amazing-ui.js",
-  "browser": "./dist/vue-amazing-ui.js",
-  "unpkg": "dist/vue-amazing-ui.iife.js",
+  "main": "./dist/tool-plugins.umd.cjs",
+  "module": "./dist/tool-plugins.js",
+  "browser": "./dist/tool-plugins.js",
+  "unpkg": "dist/tool-plugins.iife.js",
   "exports": {
     "./dist/style.css": "./dist/style.css",
     "./css": "./dist/style.css",
     ".": {
-      "import": "./dist/vue-amazing-ui.js",
-      "require": "./dist/vue-amazing-ui.umd.cjs"
+      "import": "./dist/tool-plugins.js",
+      "require": "./dist/tool-plugins.umd.cjs"
     }
   },
   "scripts": {
@@ -74,7 +74,7 @@
   "description": "An Amazing Vue3 UI Components Library.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/themusecatcher/vue-amazing-ui.git"
+    "url": "git+https://github.com/zhaoyifan-admin/tool-plugins.git.git"
   },
   "keywords": [
     "Vue3",
@@ -86,10 +86,10 @@
     "Components",
     "Tools"
   ],
-  "author": "theMuseCatcher",
+  "author": "Tantanzi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/themusecatcher/vue-amazing-ui/issues"
+    "url": "https://github.com/zhaoyifan-admin/tool-plugins/issues"
   },
   "homepage": "https://themusecatcher.github.io/vue-amazing-ui",
   "browserslist": [

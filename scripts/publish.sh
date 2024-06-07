@@ -17,7 +17,7 @@ git push
 pnpm publish
 
 # 升级 vue-amazing-ui 依赖版本
-pnpm up vue-amazing-ui@$version
+pnpm up tool-plugins@$version
 
 # 提交版本更新代码到github
 git add .

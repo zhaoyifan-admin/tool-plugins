@@ -1,24 +1,22 @@
-# vue-amazing-ui
+# tool-plugins
 
-*该组件库采用 `Vue@3.4.27`+ `TypeScript@5.4.5` + `Vite@5.2.12` + `Less@4.2.0` 实现！*<br/>
-*所有组件样式 `CSS` 均使用 `box-sizing: border-box;` 模式！*<br/>
-*目前共有 `56` 个常用基础 `UI` 组件，以及 `12` 个常用工具函数，并且持续探索更新中...！*<br/>
+*目前共有 `12` 个常用工具函数，并且持续探索更新中...！*<br/>
 *开箱即用！*
 
 ## Document & Online preview
 
-[Vue Amazing UI](https://themusecatcher.github.io/vue-amazing-ui/)
+[Tool Plugins](https://zhaoyifan-admin.github.io/tool-plugins/)
 
 ## Install
 
 ```bash
-npm install vue-amazing-ui
+npm install tool-plugins
 # or
-pnpm add vue-amazing-ui
+pnpm add tool-plugins
 # or
-yarn add vue-amazing-ui
+yarn add tool-plugins
 # or
-bun add vue-amazing-ui
+bun add tool-plugins
 ```
 
 ## Use Components
@@ -29,19 +27,19 @@ bun add vue-amazing-ui
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import VueAmazingUI from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import ToolPlugins from 'tool-plugins'
+import 'tool-plugins/css'
 
 const app = createApp(App)
-app.use(VueAmazingUI)
+app.use(ToolPlugins)
 ```
 
 **Local**
 
 ```vue
 <script setup lang="ts">
-import { Button } from 'vue-amazing-ui'
-import 'vue-amazing-ui/css'
+import { Button } from 'tool-plugins'
+import 'tool-plugins/css'
 </script>
 ```
 
@@ -62,14 +60,14 @@ import {
   formatNumber,
   toggleDark,
   useEventListener
-} from 'vue-amazing-ui'
+} from 'tool-plugins'
 </script>
 ```
 
 ## Use CDN
 
 ```html
-<script src="https://unpkg.com/vue-amazing-ui@latest"></script>
+<script src="https://unpkg.com/tool-plugins@latest"></script>
 ```
 
 ## Project
@@ -77,13 +75,13 @@ import {
 - Get the project code
 
 ```sh
-git clone https://github.com/themusecatcher/vue-amazing-ui.git
+git clone https://github.com/zhaoyifan-admin/tool-plugins.git
 ```
 
 - Install dependencies
 
 ```sh
-cd vue-amazing-ui
+cd tool-plugins
 
 pnpm i
 ```

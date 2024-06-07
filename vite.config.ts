@@ -56,8 +56,8 @@ export default defineConfig({
       formats: f === 'iife' ? ['iife'] : ['es', 'umd'],
       // __dirname 的值是 vite.config.ts 文件所在目录
       entry: resolve(__dirname, 'packages', 'index.ts'),  // entry 是必需的，因为库不能使用HTML作为入口。
-      name: 'VueAmazingUI', // 暴露的全局变量
-      fileName: 'vue-amazing-ui' // 输出的包文件名，默认是 package.json 的 name 选项
+      name: 'ToolPlugins', // 暴露的全局变量
+      fileName: 'tool-plugins' // 输出的包文件名，默认是 package.json 的 name 选项
     },
     rollupOptions: { // 自定义底层的Rollup打包配置
       plugins: [
@@ -68,7 +68,7 @@ export default defineConfig({
       external: f === 'iife' ? ['vue'] : ['vue', 'swiper/modules', 'swiper/vue', '@vuepic/vue-datepicker', '@vueuse/integrations/useQRCode', '@vueuse/core', 'qrcode'],
       // 当创建 iife 或 umd 格式的 bundle 时，你需要通过 output.globals 选项提供全局变量名，以替换掉外部引入。
       output: {
-        name: 'VueAmazingUI', // 对于输出格式为 iife | umd 的 bundle 来说，若想要使用全局变量名来表示你的 bundle 时，该选项是必要的。同一页面上的其他脚本可以使用这个变量名来访问你的 bundle 输出
+        name: 'ToolPlugins', // 对于输出格式为 iife | umd 的 bundle 来说，若想要使用全局变量名来表示你的 bundle 时，该选项是必要的。同一页面上的其他脚本可以使用这个变量名来访问你的 bundle 输出
         /*
           output.format: 
           • amd – 异步模块加载，适用于 RequireJS 等模块加载器
