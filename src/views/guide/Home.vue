@@ -55,50 +55,38 @@ function onOpen () {
 <template>
   <div>
     <Space align="top" :gap="6">
-      <h1>Vue Amazing UI</h1>
-      <Tag color="#FC5404">{{ pkg.version }}</Tag>
+      <h1>Tool Plugins</h1>
+      <a-tag color="orangered">
+        {{ pkg.version }}
+      </a-tag>
     </Space>
     <br/>
     <br/>
-    <Button type="primary" @click="onOpen">Open New Window</Button>
-    <Descriptions class="mb10 mt30" title="生产环境依赖 (dependencies)" :column="{md: 2, lg: 3, xl: 4}">
-      <DescriptionsItem :label="dependency" v-for="(version, dependency) in pkg.dependencies" :key="dependency">
-        <Tag color="volcano">{{ version }}</Tag>
-      </DescriptionsItem>
-    </Descriptions>
-    <Descriptions class="mb10 mt30" title="开发环境依赖 (devDependencies)" :column="{md: 2, lg: 3, xl: 4}">
-      <DescriptionsItem :label="dependency" v-for="(version, dependency) in pkg.devDependencies" :key="dependency">
-        <Tag color="cyan">{{ version }}</Tag>
-      </DescriptionsItem>
-    </Descriptions>
-    <p class="u-tip mb10">所有组件 <Tag color="magenta">CSS</Tag> 样式均使用 <Tag color="magenta">box-sizing: border-box;</Tag> 模式！</p>
-    <p class="u-tip mb10">目前共有 <Tag color="magenta">{{ sum }}</Tag> 个常用基础 <Tag color="magenta">UI</Tag> 组件，以及 <Tag color="magenta">12</Tag> 个常用工具函数，并且持续探索更新中...！</p>
-    <p class="u-tip">开箱即用！</p>
-    <h2 class="mt30 mb10">使用方式：</h2>
-    <Collapse
-      lang="bash"
-      :fontSize="16"
-      :collapseData="installData"
-      v-model:activeKey="activeKey"
-      copyable />
-    <ul class="m-list">
-      <li class="u-tip mb10 mt10">全局引入并注册所有组件</li>
-      <li class="u-tip mb10">按需引入并注册部分组件</li>
-    </ul>
+<!--    <Button type="primary" @click="onOpen">Open New Window</Button>-->
+    <a-descriptions class="mb10 mt30" title="生产环境依赖 (dependencies)" :column="{md: 2, lg: 3, xl: 4}">
+      <a-descriptions-item :label="dependency" v-for="(version, dependency) in pkg.dependencies" :key="dependency">
+        <a-tag color="volcano">{{ version }}</a-tag>
+      </a-descriptions-item>
+    </a-descriptions>
+    <a-descriptions class="mb10 mt30" title="开发环境依赖 (devDependencies)" :column="{md: 2, lg: 3, xl: 4}">
+      <a-descriptions-item :label="dependency" v-for="(version, dependency) in pkg.devDependencies" :key="dependency">
+        <a-tag color="cyan">{{ version }}</a-tag>
+      </a-descriptions-item>
+    </a-descriptions>
     <h2 class="mt30">常用工具函数：</h2>
     <ul class="m-list">
-      <li class="u-tip mb10 mt10"><Tag color="geekblue">dateFormat</Tag>: 简单易用的日期格式化函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">requestAnimationFrame</Tag>: 针对不同浏览器进行兼容处理！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">cancelAnimationFrame</Tag>: 针对不同浏览器进行兼容处理！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">rafTimeout</Tag>: 使用 requestAnimationFrame 实现的定时器函数，等效替代 (setTimeout 和 setInterval)！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">cancelRaf</Tag>: 用于取消 rafTimeout 函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">throttle</Tag>: 节流函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">debounce</Tag>: 防抖函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">add</Tag>: 消除js加减精度问题的加法函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">downloadFile</Tag>: 下载文件并自定义文件名，未传文件名时，从文件地址中自动获取文件名称！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">formatNumber</Tag>: 数字格式化函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">toggleDark</Tag>: 一键切换暗黑模式函数！</li>
-      <li class="u-tip mb10"><Tag color="geekblue">useEventListener</Tag>: 自动添加和清除 DOM 事件监听器函数！</li>
+      <li class="u-tip mb10 mt10"><a-tag color="geekblue">dateFormat</a-tag>: 简单易用的日期格式化函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">requestAnimationFrame</a-tag>: 针对不同浏览器进行兼容处理！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">cancelAnimationFrame</a-tag>: 针对不同浏览器进行兼容处理！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">rafTimeout</a-tag>: 使用 requestAnimationFrame 实现的定时器函数，等效替代 (setTimeout 和 setInterval)！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">cancelRaf</a-tag>: 用于取消 rafTimeout 函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">throttle</a-tag>: 节流函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">debounce</a-tag>: 防抖函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">add</a-tag>: 消除js加减精度问题的加法函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">downloadFile</a-tag>: 下载文件并自定义文件名，未传文件名时，从文件地址中自动获取文件名称！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">formatNumber</a-tag>: 数字格式化函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">toggleDark</a-tag>: 一键切换暗黑模式函数！</li>
+      <li class="u-tip mb10"><a-tag color="geekblue">useEventListener</a-tag>: 自动添加和清除 DOM 事件监听器函数！</li>
     </ul>
     <Collapse
       lang="vue3"
