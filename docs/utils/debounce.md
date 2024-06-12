@@ -26,7 +26,7 @@ function debounce (fn: Function, delay = 300): any {
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { debounce, useEventListener } from 'vue-amazing-ui'
+import { debounce, useEventListener } from 'tool-plugins'
 
 const scrollTop = ref(0)
 useEventListener(window, 'scroll', debounce(showPosition, 100))
@@ -42,7 +42,7 @@ function showPosition () {
 ```vue
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { debounce, useEventListener } from 'vue-amazing-ui'
+import { debounce, useEventListener } from 'tool-plugins'
 
 const scrollTop = ref(0)
 useEventListener(window, 'scroll', debounce(showPosition, 100))

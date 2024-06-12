@@ -2,11 +2,11 @@
 layout: home
 
 title: Tool Plugins
-titleTemplate: Amazing UI Components Library
+titleTemplate: Tool Plugins Components Library
 
 hero:
   name: Tool Plugins
-  text: Amazing UI 组件库
+  text: Tool Plugins 组件库
   tagline: 基于 Vue3 + TS + Vite 开发
   image:
     src: /amazing-logo.svg

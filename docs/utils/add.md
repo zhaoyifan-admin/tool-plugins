@@ -24,7 +24,7 @@ function add (num1: number, num2: number): number {
 
 ```vue
 <script setup lang="ts">
-import { add } from 'vue-amazing-ui'
+import { add } from 'tool-plugins'
 
 console.log(0.1 + 0.2) // js直接计算结果: 0.30000000000000004
 add(0.1, 0.2) // 0.3

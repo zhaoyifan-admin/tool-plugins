@@ -33,7 +33,7 @@ import {
   formatNumber,
   toggleDark,
   useEventListener
-} from 'vue-amazing-ui'
+} from 'tool-plugins'
 <\/script>`
   }
 ])
@@ -64,12 +64,12 @@ function onOpen () {
     <br/>
 <!--    <Button type="primary" @click="onOpen">Open New Window</Button>-->
     <a-descriptions class="mb10 mt30" title="生产环境依赖 (dependencies)" :column="{md: 2, lg: 3, xl: 4}">
-      <a-descriptions-item :label="dependency" v-for="(version, dependency) in pkg.dependencies" :key="dependency">
+      <a-descriptions-item :label="dependency.toString()" v-for="(version, dependency) in pkg.dependencies" :key="dependency">
         <a-tag color="volcano">{{ version }}</a-tag>
       </a-descriptions-item>
     </a-descriptions>
     <a-descriptions class="mb10 mt30" title="开发环境依赖 (devDependencies)" :column="{md: 2, lg: 3, xl: 4}">
-      <a-descriptions-item :label="dependency" v-for="(version, dependency) in pkg.devDependencies" :key="dependency">
+      <a-descriptions-item :label="dependency.toString()" v-for="(version, dependency) in pkg.devDependencies" :key="dependency">
         <a-tag color="cyan">{{ version }}</a-tag>
       </a-descriptions-item>
     </a-descriptions>

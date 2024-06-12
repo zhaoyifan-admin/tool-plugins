@@ -1,7 +1,7 @@
 # 特性
 
 <BackTop />
-<Watermark fullscreen content="Vue Amazing UI" />
+<Watermark fullscreen content="Tool Plugins" />
 
 ## 简要介绍
 

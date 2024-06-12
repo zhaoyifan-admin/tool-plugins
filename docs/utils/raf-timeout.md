@@ -48,7 +48,7 @@ function cancelRaf (raf: { id: number }): void {
 
 <script setup lang="ts">
 import { onUnmounted } from 'vue'
-import { rafTimeout, cancelRaf } from 'vue-amazing-ui'
+import { rafTimeout, cancelRaf } from 'tool-plugins'
 
 const timeoutRaf = rafTimeout(() => {
   console.log('raf timeout')
@@ -70,7 +70,7 @@ onUnmounted(() => {
 ```vue
 <script setup lang="ts">
 import { onUnmounted } from 'vue'
-import { rafTimeout, cancelRaf } from 'vue-amazing-ui'
+import { rafTimeout, cancelRaf } from 'tool-plugins'
 
 const timeoutRaf = rafTimeout(() => {
   console.log('raf timeout')
@@ -89,7 +89,7 @@ onUnmounted(() => {
 ```vue
 <script setup lang="ts">
 import { onUnmounted } from 'vue'
-import { rafTimeout, cancelRaf } from 'vue-amazing-ui'
+import { rafTimeout, cancelRaf } from 'tool-plugins'
 
 const intervalRaf = rafTimeout(() => {
   console.log('raf interval')

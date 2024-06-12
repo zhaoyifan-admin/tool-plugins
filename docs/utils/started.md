@@ -21,7 +21,7 @@ import {
   formatNumber,
   toggleDark,
   useEventListener
-} from 'vue-amazing-ui'
+} from 'tool-plugins'
 </script>
 ```
 

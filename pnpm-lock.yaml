@@ -32,6 +32,9 @@ dependencies:
   swiper:
     specifier: ^11.1.4
     version: 11.1.4
+  tool-plugins:
+    specifier: ^1.0.0
+    version: 1.0.0(typescript@5.4.5)
   vue:
     specifier: ^3.4.27
     version: 3.4.27(typescript@5.4.5)
@@ -3647,6 +3650,36 @@ packages:
     dependencies:
       is-number: 7.0.0
     dev: true
+
+  /tool-plugins@1.0.0(typescript@5.4.5):
+    resolution: {integrity: sha512-WCvfG0E3beHXces+Q8Oq9KO2AW3JJ5YaHPjBVtt2i7Q4CddhA1A/ZzLBFc62VT6LEm+zs/ZA/MuMHG+VLYKd/w==}
+    dependencies:
+      '@vuepic/vue-datepicker': 8.7.0(vue@3.4.27)
+      '@vueuse/core': 10.10.0(vue@3.4.27)
+      '@vueuse/integrations': 10.10.0(focus-trap@7.5.4)(qrcode@1.5.3)(vue@3.4.27)
+      ant-design-vue: 4.2.2(vue@3.4.27)
+      core-js: 3.37.1
+      date-fns: 3.6.0
+      naive-ui: 2.38.2(vue@3.4.27)
+      qrcode: 1.5.3
+      swiper: 11.1.4
+      vue: 3.4.27(typescript@5.4.5)
+      vue-router: 4.3.2(vue@3.4.27)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - async-validator
+      - axios
+      - change-case
+      - drauu
+      - focus-trap
+      - fuse.js
+      - idb-keyval
+      - jwt-decode
+      - nprogress
+      - sortablejs
+      - typescript
+      - universal-cookie
+    dev: false
 
   /treemate@0.3.11:
     resolution: {integrity: sha512-M8RGFoKtZ8dF+iwJfAJTOH/SM4KluKOKRJpjCMhI8bG3qB74zrFoArKZ62ll0Fr3mqkMJiQOmWYkdYgDeITYQg==}

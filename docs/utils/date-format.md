@@ -52,7 +52,7 @@ function dateFormat (value: number|string|Date = Date.now(), format = 'YYYY-MM-D
 - 格式化日期时
 
 <script setup lang="ts">
-import { dateFormat } from 'vue-amazing-ui'
+import { dateFormat } from 'tool-plugins'
 </script>
 
 ## 基本使用
@@ -65,7 +65,7 @@ import { dateFormat } from 'vue-amazing-ui'
 
 ```vue
 <script setup lang="ts">
-import { dateFormat } from 'vue-amazing-ui'
+import { dateFormat } from 'tool-plugins'
 
 dateFormat(Date.now())
 </script>
@@ -79,7 +79,7 @@ dateFormat(Date.now())
 
 ```vue
 <script setup lang="ts">
-import { dateFormat } from 'vue-amazing-ui'
+import { dateFormat } from 'tool-plugins'
 
 dateFormat('2023-05-31', 'MM/DD/YYYY') // 05/31/2023
 </script>
@@ -93,7 +93,7 @@ dateFormat('2023-05-31', 'MM/DD/YYYY') // 05/31/2023
 
 ```vue
 <script setup lang="ts">
-import { dateFormat } from 'vue-amazing-ui'
+import { dateFormat } from 'tool-plugins'
 
 dateFormat(Date.now(), 'YYYY-MM-DD HH:mm:ss:SSS')
 </script>

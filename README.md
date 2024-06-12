@@ -24,44 +24,7 @@ bun add tool-plugins
 **Global**
 
 ```ts
-import { createApp } from 'vue'
-import App from './App.vue'
 
-import ToolPlugins from 'tool-plugins'
-import 'tool-plugins/css'
-
-const app = createApp(App)
-app.use(ToolPlugins)
-```
-
-**Local**
-
-```vue
-<script setup lang="ts">
-import { Button } from 'tool-plugins'
-import 'tool-plugins/css'
-</script>
-```
-
-## Use Functions
-
-```vue
-<script setup lang="ts">
-import {
-  dateFormat,
-  requestAnimationFrame,
-  cancelAnimationFrame,
-  rafTimeout,
-  cancelRaf,
-  throttle,
-  debounce,
-  add,
-  downloadFile,
-  formatNumber,
-  toggleDark,
-  useEventListener
-} from 'tool-plugins'
-</script>
 ```
 
 ## Use CDN
@@ -91,39 +54,6 @@ pnpm i
 ```sh
 pnpm dev
 ```
-
-## Components
-
-Component name | Descriptions | Component name | Descriptions
-:-- | :-- | :-- | :--
-Alert | 警告提示 | Avatar | 头像
-BackTop | 回到顶部 | Badge | 徽标
-Breadcrumb | 面包屑 | Button | 按钮
-Card | 卡片 | Carousel | 走马灯
-Cascader | 级联选择 | Checkbox | 多选框
-Collapse | 折叠面板 | Countdown | 倒计时
-DatePicker | 日期选择 | Descriptions | 描述列表
-Dialog | 对话框 | Divider | 分割线
-Drawer | 抽屉 | Ellipsis | 文本省略
-Empty | 空状态 | Flex | 弹性布局
-Grid | 栅格 | Image | 图片
-Input | 输入框 | InputNumber | 数字输入框
-Message | 全局提示 | Modal | 信息提示
-Notification | 通知提醒 | NumberAnimation | 数值动画
-Pagination | 分页 | Popconfirm | 弹出确认
-Popover | 气泡卡片 | Progress | 进度条
-QRCode | 二维码 | Radio | 单选框
-Rate | 评分 | Result | 结果
-Select | 选择器 | Skeleton | 骨架屏
-Slider | 滑动输入条 | Space | 间距
-Spin | 加载中 | Statistic | 统计数值
-Steps | 步骤条 | Swiper | 触摸滑动插件
-Switch | 开关 | Table | 表格
-Tabs | 标签页 | Tag | 标签
-Textarea | 文本域 | TextScroll | 文字滚动
-Timeline | 时间轴 | Tooltip | 文字提示
-Upload | 上传 | Video | 播放器
-Waterfall | 瀑布流 | Watermark | 水印
 
 ## Details
 

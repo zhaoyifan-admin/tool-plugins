@@ -35,7 +35,7 @@ function formatNumber (value: number|string, precision = 2, separator = ',', dec
 - 格式化数字时
 
 <script setup lang="ts">
-import { formatNumber } from 'vue-amazing-ui'
+import { formatNumber } from 'tool-plugins'
 </script>
 
 ## 基本使用
@@ -46,7 +46,7 @@ import { formatNumber } from 'vue-amazing-ui'
 
 ```vue
 <script setup lang="ts">
-import { formatNumber } from 'vue-amazing-ui'
+import { formatNumber } from 'tool-plugins'
 
 formatNumber(123456789.87654321, 2, ',') // 123,456,789.88
 </script>
