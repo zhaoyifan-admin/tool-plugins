@@ -13,7 +13,12 @@ import {
     formatNumber,
     toggleDark,
     useEventListener,
-    checkIdentity
+    checkIdentity,
+    gps84_To_Gcj02,
+    gcj02_To_Gps84,
+    gps84_To_bd09,
+    bd09_To_gps84,
+    gcj02_To_Bd09,
 } from './utils'
 
 export {
@@ -29,7 +34,12 @@ export {
     formatNumber,
     toggleDark,
     useEventListener,
-    checkIdentity
+    checkIdentity,
+    gps84_To_Gcj02,
+    gcj02_To_Gps84,
+    gps84_To_bd09,
+    bd09_To_gps84,
+    gcj02_To_Bd09,
 }
 // const components: any[] = []
 // const install = function (app: App) {
