@@ -40,3 +40,8 @@ add | 消除js加减精度问题的加法函数！ | (num1: number, num2: number
 downloadFile | 下载文件并自定义文件名，未传 name 时，从文件地址中自动获取文件名称！ | (url: string, name: string) => void
 formatNumber | 数字格式化函数！ | (value: number&#124;string, decimal = 2, split = ',') => string
 toggleDark | 一键切换暗黑模式函数！ | () => void
+gps84_To_Gcj02 | 84 to 火星坐标系 (GCJ-02) | (lon: number, lat: number) => void
+gcj02_To_Gps84 | 火星坐标系 (GCJ-02) to 84 | (lon: number, lat: number) => void
+gps84_To_bd09 | gps84转为bd09 | (lon: number, lat: number) => void
+bd09_To_gps84 | bd09转为gps84 | (lon: number, lat: number) => void
+gcj02_To_Bd09 | 火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换 | (lon: number, lat: number) => void

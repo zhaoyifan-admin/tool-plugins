@@ -1,5 +1,5 @@
 import './less/global.less'
-import type {App} from 'vue'
+import './less/style.scss'
 import {
     dateFormat,
     requestAnimationFrame,
