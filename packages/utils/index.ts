@@ -237,12 +237,12 @@ import {onMounted, onUnmounted} from 'vue'
   callback：监听事件触发时的回调函数
 
 */
-export function useEventListener(target: any, event: string, callback: Function) {
-    // 如果你想的话，
-    // 也可以用字符串形式的 CSS 选择器来寻找目标 DOM 元素
-    onMounted(() => target.addEventListener(event, callback))
-    onUnmounted(() => target.removeEventListener(event, callback))
-}
+// export function useEventListener(target: any, event: string, callback: Function) {
+//     // 如果你想的话，
+//     // 也可以用字符串形式的 CSS 选择器来寻找目标 DOM 元素
+//     onMounted(() => target.addEventListener(event, callback))
+//     onUnmounted(() => target.removeEventListener(event, callback))
+// }
 
 export function checkIdentity(value: any) {
     if (value.length === 15) return true;
