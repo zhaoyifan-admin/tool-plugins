@@ -1,3 +1,13 @@
+/*盒子模型*/
+.content-box {
+  box-sizing: content-box;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+
 /* flex布局 */
 .d-flex {
   display: flex
@@ -114,5 +124,17 @@
   }
   .pl-#{$i} {
     padding-left: #{$i}px !important;
+  }
+  .top-#{$i} {
+    top: #{$i}px !important;
+  }
+  .left-#{$i} {
+    left: #{$i}px !important;
+  }
+  .right-#{$i} {
+    right: #{$i}px !important;
+  }
+  .bottom-#{$i} {
+    bottom: #{$i}px !important;
   }
 }

@@ -1,5 +1,5 @@
 import './less/global.less'
-import './less/style.scss'
+import './scss/style.scss'
 import {
     dateFormat,
     requestAnimationFrame,
@@ -12,7 +12,6 @@ import {
     downloadFile,
     formatNumber,
     toggleDark,
-    useEventListener,
     checkIdentity,
     gps84_To_Gcj02,
     gcj02_To_Gps84,
@@ -33,7 +32,6 @@ export {
     downloadFile,
     formatNumber,
     toggleDark,
-    useEventListener,
     checkIdentity,
     gps84_To_Gcj02,
     gcj02_To_Gps84,
