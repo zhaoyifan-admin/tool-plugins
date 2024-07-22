@@ -1,60 +1,61 @@
 // import type {App} from "vue";
 import './less/global.less'
 import './scss/style.scss'
+
 import {
-    dateFormat,
-    requestAnimationFrame,
-    cancelAnimationFrame,
-    rafTimeout,
-    cancelRaf,
-    throttle,
-    debounce,
     add,
+    cancelAnimationFrame,
+    cancelRaf,
+    checkIdNo,
+    dateFormat,
+    debounce,
     downloadFile,
     formatNumber,
+    rafTimeout,
+    requestAnimationFrame,
+    throttle,
     toggleDark,
-    checkIdNo,
 } from './utils'
 import {
-    gps84_To_bd09,
-    gps84_To_Gcj02,
-    gcj02_To_Gps84,
     bd09_To_gps84,
-    gcj02_To_Bd09
+    gcj02_To_Bd09,
+    gcj02_To_Gps84,
+    gps84_To_Gcj02,
+    gps84_To_bd09,
 } from './utils/gps'
 import {
-    get,
-    post,
-    download,
-    put,
     deleted,
-    patch
+    download,
+    get,
+    patch,
+    post,
+    put,
 } from './utils/axios'
 
 export {
-    dateFormat,
-    requestAnimationFrame,
-    cancelAnimationFrame,
-    rafTimeout,
-    cancelRaf,
-    throttle,
-    debounce,
     add,
+    bd09_To_gps84,
+    cancelAnimationFrame,
+    cancelRaf,
+    checkIdNo,
+    dateFormat,
+    debounce,
+    deleted,
+    download,
     downloadFile,
     formatNumber,
-    toggleDark,
-    checkIdNo,
-    gps84_To_Gcj02,
-    gcj02_To_Gps84,
-    gps84_To_bd09,
-    bd09_To_gps84,
     gcj02_To_Bd09,
+    gcj02_To_Gps84,
     get,
+    gps84_To_Gcj02,
+    gps84_To_bd09,
+    patch,
     post,
-    download,
     put,
-    deleted,
-    patch
+    rafTimeout,
+    requestAnimationFrame,
+    throttle,
+    toggleDark,
 }
 // const components: any[] = []
 // const install = function (app: App) {
