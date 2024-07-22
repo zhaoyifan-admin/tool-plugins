@@ -23,7 +23,7 @@ import {
 } from './utils/gps'
 import type {App} from "vue";
 
-const components: any[] = [
+export {
     dateFormat,
     requestAnimationFrame,
     cancelAnimationFrame,
@@ -36,13 +36,15 @@ const components: any[] = [
     formatNumber,
     toggleDark,
     checkIdNo,
+}
+const components: any[] = [
     gps84_To_Gcj02,
     gcj02_To_Gps84,
     gps84_To_bd09,
     bd09_To_gps84,
     gcj02_To_Bd09
 ]
-const ToolPlugins = function (app: App) {
+const install = function (app: App) {
     // 遍历注册所有组件
     /*
       component.__name ts报错
@@ -53,5 +55,7 @@ const ToolPlugins = function (app: App) {
     */
     components.forEach(component => app.component(component.__name as string, component))
 }
-
+const ToolPlugins = {
+    install,
+}
 export default ToolPlugins
