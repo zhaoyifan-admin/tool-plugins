@@ -14,6 +14,9 @@ dependencies:
   '@vueuse/integrations':
     specifier: ^10.10.0
     version: 10.10.0(axios@1.7.2)(focus-trap@7.5.4)(qrcode@1.5.3)(vue@3.4.27)
+  ant-design-vue:
+    specifier: 4.x
+    version: 4.2.2(vue@3.4.27)
   axios:
     specifier: ^1.7.2
     version: 1.7.2
@@ -23,6 +26,9 @@ dependencies:
   date-fns:
     specifier: ^3.6.0
     version: 3.6.0
+  el-tree-transfer:
+    specifier: ^2.4.7
+    version: 2.4.7
   naive-ui:
     specifier: ^2.38.2
     version: 2.38.2(vue@3.4.27)
@@ -1502,6 +1508,10 @@ packages:
   /balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
+
+  /big.js@5.2.2:
+    resolution: {integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==}
+    dev: false
 
   /binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -4093,6 +4103,13 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /wl-core@1.1.9:
+    resolution: {integrity: sha512-7L83qEnrVW3YmPVqSwnlagoWJyVq/uSXkCFzND64nwtSdDm7o1RZQWiVgQcEilZxE0qLrRQKmjuAihNT6fWCjA==}
+    dependencies:
+      big.js: 5.2.2
+      dayjs: 1.11.11
+    dev: false
 
   /word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}

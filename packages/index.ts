@@ -12,15 +12,18 @@ import {
     downloadFile,
     formatNumber,
     toggleDark,
-    checkIdentity,
+    checkIdNo,
+} from './utils'
+import {
+    gps84_To_bd09,
     gps84_To_Gcj02,
     gcj02_To_Gps84,
-    gps84_To_bd09,
     bd09_To_gps84,
-    gcj02_To_Bd09,
-} from './utils'
+    gcj02_To_Bd09
+} from './utils/gps'
+import type {App} from "vue";
 
-export {
+const components: any[] = [
     dateFormat,
     requestAnimationFrame,
     cancelAnimationFrame,
@@ -32,22 +35,23 @@ export {
     downloadFile,
     formatNumber,
     toggleDark,
-    checkIdentity,
+    checkIdNo,
     gps84_To_Gcj02,
     gcj02_To_Gps84,
     gps84_To_bd09,
     bd09_To_gps84,
-    gcj02_To_Bd09,
+    gcj02_To_Bd09
+]
+const ToolPlugins = function (app: App) {
+    // 遍历注册所有组件
+    /*
+      component.__name ts报错
+      Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      Type 'undefined' is not assignable to type 'string'.ts(2345)
+      解决方式一：使用// @ts-ignore
+      解决方式二：使用类型断言 尖括号语法(<string>component.__name) 或 as语法(component.__name as string)
+    */
+    components.forEach(component => app.component(component.__name as string, component))
 }
-// const components: any[] = []
-// const install = function (app: App) {
-//     // 遍历注册所有组件
-//     /*
-//       component.__name ts报错
-//       Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
-//       Type 'undefined' is not assignable to type 'string'.ts(2345)
-//       解决方式一：使用// @ts-ignore
-//       解决方式二：使用类型断言 尖括号语法(<string>component.__name) 或 as语法(component.__name as string)
-//     */
-//     components.forEach(component => app.component(component.__name as string, component))
-// }
+
+export default ToolPlugins

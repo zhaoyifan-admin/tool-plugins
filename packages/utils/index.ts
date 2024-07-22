@@ -244,207 +244,13 @@ import {onMounted, onUnmounted} from 'vue'
 //     onUnmounted(() => target.removeEventListener(event, callback))
 // }
 
-export function checkIdentity(value: any) {
-    if (value.length === 15) return true;
-    if (value.length !== 18) return false;
-    const address = value.substring(0, 6); // 6位，地区代码
-    const birthday = value.substring(6, 14); // 8位，出生日期
-    const province: Record<number, string> = {
-        11: '北京',
-        12: '天津',
-        13: '河北',
-        14: '山西',
-        15: '内蒙古',
-        21: '辽宁',
-        22: '吉林',
-        23: '黑龙江 ',
-        31: '上海',
-        32: '江苏',
-        33: '浙江',
-        34: '安徽',
-        35: '福建',
-        36: '江西',
-        37: '山东',
-        41: '河南',
-        42: '湖北 ',
-        43: '湖南',
-        44: '广东',
-        45: '广西',
-        46: '海南',
-        50: '重庆',
-        51: '四川',
-        52: '贵州',
-        53: '云南',
-        54: '西藏 ',
-        61: '陕西',
-        62: '甘肃',
-        63: '青海',
-        64: '宁夏',
-        65: '新疆',
-        71: '台湾',
-        81: '香港',
-        82: '澳门',
-    };
-    const year = birthday.substring(0, 4);
-    const month = birthday.substring(4, 6);
-    const day = birthday.substring(6);
-    const tempDate = new Date(year, parseFloat(month) - 1, parseFloat(day));
-    if (province[parseInt(address.substr(0, 2), 10)] == null ||
-        (tempDate.getFullYear() !== parseFloat(year) ||
-            tempDate.getMonth() !== parseFloat(month) - 1 || tempDate.getDate() !== parseFloat(day))) {
-        // 这里用getFullYear()获取年份，避免千年虫问题
-        return false;
-    }
-    const weightedFactors = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1]; // 加权因子
-    const valideCode = [1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2]; // 身份证验证位值，当中10代表X
-    const certificateNoArray = value.split(''); // 得到身份证数组
-    let sum = 0; // 声明加权求和变量
-    if (certificateNoArray[17].toLowerCase() === 'x') {
-        certificateNoArray[17] = 10; // 将最后位为x的验证码替换为10
-    }
-    for (let i = 0; i < 17; i += 1) {
-        sum += weightedFactors[i] * certificateNoArray[i]; // 加权求和
-    }
-    const valCodePosition = sum % 11; // 得到验证码所在位置
-    if (Number(certificateNoArray[17]) === valideCode[valCodePosition]) return true;
-    return false;
-}
-
-const pi = 3.1415926535897932384626;
-const x_pi = 3.14159265358979324 * 3000.0 / 180.0;
-const a = 6378245.0;
-const ee = 0.00669342162296594323;
-
-function transformLat(x: number, y: number) {
-    let ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y
-        + 0.2 * Math.sqrt(Math.abs(x));
-    ret += (20.0 * Math.sin(6.0 * x * pi) + 20.0 * Math.sin(2.0 * x * pi)) * 2.0 / 3.0;
-    ret += (20.0 * Math.sin(y * pi) + 40.0 * Math.sin(y / 3.0 * pi)) * 2.0 / 3.0;
-    ret += (160.0 * Math.sin(y / 12.0 * pi) + 320 * Math.sin(y * pi / 30.0)) * 2.0 / 3.0;
-    return ret;
-}
-
-function transformLon(x: number, y: number) {
-    let ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1
-        * Math.sqrt(Math.abs(x));
-    ret += (20.0 * Math.sin(6.0 * x * pi) + 20.0 * Math.sin(2.0 * x * pi)) * 2.0 / 3.0;
-    ret += (20.0 * Math.sin(x * pi) + 40.0 * Math.sin(x / 3.0 * pi)) * 2.0 / 3.0;
-    ret += (150.0 * Math.sin(x / 12.0 * pi) + 300.0 * Math.sin(x / 30.0
-        * pi)) * 2.0 / 3.0;
-    return ret;
-}
-
-function transform(lon: number, lat: number) {
-    if (outOfChina(lon, lat)) {
-        return [lon, lat];
-    }
-    let dLat = transformLat(lon - 105.0, lat - 35.0);
-    let dLon = transformLon(lon - 105.0, lat - 35.0);
-    let radLat = lat / 180.0 * pi;
-    let magic = Math.sin(radLat);
-    magic = 1 - ee * magic * magic;
-    let sqrtMagic = Math.sqrt(magic);
-    dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * pi);
-    dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * pi);
-    let mgLat = lat + dLat;
-    let mgLon = lon + dLon;
-    return [mgLon, mgLat];
-}
-
-function outOfChina(lon: number, lat: number) {
-    if (lon < 72.004 || lon > 137.8347)
-        return true;
-    return lat < 0.8293 || lat > 55.8271;
-
-}
-
-/**
- * 84 to 火星坐标系 (GCJ-02) World Geodetic System ==> Mars Geodetic System
- *
- * @param lat
- * @param lon
- * @return
- */
-export function gps84_To_Gcj02(lon: number, lat: number) {
-    if (outOfChina(lon, lat)) {
-        return [lon, lat];
-    }
-    let dLat = transformLat(lon - 105.0, lat - 35.0);
-    let dLon = transformLon(lon - 105.0, lat - 35.0);
-    let radLat = lat / 180.0 * pi;
-    let magic = Math.sin(radLat);
-    magic = 1 - ee * magic * magic;
-    let sqrtMagic = Math.sqrt(magic);
-    dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * pi);
-    dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * pi);
-    let mgLat = retain6(lat + dLat);
-    let mgLon = retain6(lon + dLon);
-    return [mgLon, mgLat];
-}
-
-/**
- * * 火星坐标系 (GCJ-02) to 84 * * @param lon * @param lat * @return
- * */
-export function gcj02_To_Gps84(lon: number, lat: number) {
-    let gps = transform(lon, lat);
-    let mgLon = lon * 2 - gps[0];
-    let mgLat = lat * 2 - gps[1];
-    return [mgLon, mgLat];
-}
-
-/**
- * 火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法 将 GCJ-02 坐标转换成 BD-09 坐标
- *
- * @param lat
- * @param lon
- */
-export function gcj02_To_Bd09(lon: number, lat: number) {
-    let x = lon, y = lat;
-    let z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * x_pi);
-    let theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * x_pi);
-    let mgLon = z * Math.cos(theta) + 0.0065;
-    let mgLat = z * Math.sin(theta) + 0.006;
-    return [mgLon, mgLat];
-}
-
-/**
- * * 火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法 * * 将 BD-09 坐标转换成GCJ-02 坐标 * * @param
- * bd_lat * @param bd_lon * @return
- */
-function bd09_To_Gcj02(lon: number, lat: number) {
-    let x = lon - 0.0065, y = lat - 0.006;
-    let z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_pi);
-    let theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_pi);
-    let mgLon = z * Math.cos(theta);
-    let mgLat = z * Math.sin(theta);
-    return [mgLon, mgLat];
-}
-
-/**将gps84转为bd09
- * @param lat
- * @param lon
- * @return
- */
-export function gps84_To_bd09(lon: number, lat: number) {
-    let gcj02 = gps84_To_Gcj02(lon, lat);
-    return gcj02_To_Bd09(gcj02[0], gcj02[1]);
-}
-
-export function bd09_To_gps84(lon: number, lat: number) {
-    let gcj02 = bd09_To_Gcj02(lon, lat);
-    let gps84 = gcj02_To_Gps84(gcj02[0], gcj02[1]);
-    //保留小数点后六位
-    gps84[0] = retain6(gps84[0]);
-    gps84[1] = retain6(gps84[1]);
-    return gps84;
-}
-
 /**保留小数点后六位
  * @param num
+ * @param intercept
  * @return
  */
-function retain6(num: number) {
-    return parseFloat(num.toFixed(6));
+function retain6(num: number, intercept: number) {
+    return parseFloat(num.toFixed(intercept));
 }
 
 //get请求方式
@@ -559,7 +365,7 @@ export default {
 }
 
 export function checkIdNo(params: any) {
-    const aCity:{ [key: number]: any } = {
+    const aCity: { [key: number]: any } = {
         11: "北京",
         12: "天津",
         13: "河北",
