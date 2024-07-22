@@ -100,7 +100,7 @@
 /* 外边距、内边距全局样式
 ------------------------------- */
 //noinspection CssInvalidAtRule
-@for $i from 0 through 299 {
+@for $i from 0 through 999 {
   .mt-#{$i} {
     margin-top: #{$i}px !important;
   }

@@ -22,6 +22,14 @@ import {
     bd09_To_gps84,
     gcj02_To_Bd09
 } from './utils/gps'
+import {
+    get,
+    post,
+    download,
+    put,
+    deleted,
+    patch
+} from './utils/axios'
 
 export {
     dateFormat,
@@ -40,7 +48,13 @@ export {
     gcj02_To_Gps84,
     gps84_To_bd09,
     bd09_To_gps84,
-    gcj02_To_Bd09
+    gcj02_To_Bd09,
+    get,
+    post,
+    download,
+    put,
+    deleted,
+    patch
 }
 // const components: any[] = []
 // const install = function (app: App) {
