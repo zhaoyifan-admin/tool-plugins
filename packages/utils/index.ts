@@ -244,15 +244,6 @@ export function useEventListener(target: any, event: string, callback: Function)
     onUnmounted(() => target.removeEventListener(event, callback))
 }
 
-/**保留小数点后六位
- * @param num
- * @param intercept
- * @return
- */
-function retain6(num: number, intercept: number) {
-    return parseFloat(num.toFixed(intercept));
-}
-
 //get请求方式
 function get(config: any) {
     return new Promise((resolve, reject) => {
@@ -355,15 +346,7 @@ function patch(config: any) {
     })
 }
 
-export default {
-    get,
-    post,
-    downloadPost,
-    put,
-    deleted,
-    patch
-}
-
+// 校验身份证规则
 export function checkIdNo(params: any) {
     const aCity: { [key: number]: any } = {
         11: "北京",
@@ -411,4 +394,13 @@ export function checkIdNo(params: any) {
     if (sBirthday != (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) return false;
     for (let i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(params.charAt(17 - i), 11);
     return iSum % 11 == 1;
+}
+
+export default {
+    get,
+    post,
+    downloadPost,
+    put,
+    deleted,
+    patch
 }
