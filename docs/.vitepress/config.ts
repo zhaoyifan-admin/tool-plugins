@@ -88,48 +88,7 @@ export default defineConfig({
         },
         {
           text: '工具',
-          items: [
-            {
-              text: 'add 加法',
-              link: '/utils/add'
-            },
-            {
-              text: 'raf 动画帧',
-              link: '/utils/animation-frame'
-            },
-            {
-              text: 'dateFormat 日期格式化',
-              link: '/utils/date-format'
-            },
-            {
-              text: 'debounce 防抖',
-              link: '/utils/debounce'
-            },
-            {
-              text: 'downloadFile 下载文件',
-              link: '/utils/download-file'
-            },
-            {
-              text: 'addEventListener 监听事件',
-              link: '/utils/event-listener'
-            },
-            {
-              text: 'formatNumber 数字格式化',
-              link: '/utils/format-number'
-            },
-            {
-              text: 'rafTimeout 定时器',
-              link: '/utils/raf-timeout'
-            },
-            {
-              text: 'throttle 节流',
-              link: '/utils/throttle'
-            },
-            {
-              text: 'toggleDark 切换暗黑',
-              link: '/utils/toggle-dark'
-            }
-          ]
+          items: []
         }
       ]
     }
