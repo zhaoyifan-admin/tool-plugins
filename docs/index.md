@@ -9,7 +9,7 @@ hero:
   text: Tool Plugins 组件库
   tagline: 基于 Vue3 + TS + Vite 开发
   image:
-    src: /amazing-logo.svg
+    src: /
     alt: Tool Plugins
   actions:
     - theme: brand
